@@ -1,49 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clases - Inteligencia Artificial</title>
-</head>
-<body>
-    
-      <h2>  22/08/2024 </h2>
-    <p>
-        Primer ligar vimos definiciones de Inteligencia Artificial, conceptos, objetivos, logica, 
-        se explico metodo de alan turin, problemas de busqueda, metodos de busqueda, y e hicimos practica con git 
-    </p>
-        
-       <h2> 29/08/2024 Vuideo: </h2> 
-        <p>
-        explica cómo las redes neuronales imitan el cerebro humano para reconocer patrones en imágenes. 
-        Muestra la estructura básica de una red neuronal como las capas de entrada, ocultas y de salida. Las capas de entrada procesan los píxeles, 
-        las ocultas identifican patrones, y la de salida clasifica los dígitos. La función sigmoide normaliza las activaciones entre 0 y 1, 
-        ayudando en el reconocimiento preciso. También se menciona la importancia de ajustar los pesos y sesgos para optimizar el rendimiento de la red.
-        </p>
-       
-        <h2> 12/09/2024 Clase: </h2>
-        <p>
-        En la clase se realizo la practica en google colab donde trabajamos un ejercicio en el que utilizamos una herramienta llamada TensorFlow para crear un modelo que convierte 
-        temperaturas de Celsius a Fahrenheit. Primero,  tenemos dos listas de datos: una con valores en grados Celsius y otra con sus equivalentes en Fahrenheit. 
-        Luego, se construye un modelo sencillo con capas que aprenden a hacer esa conversión. El modelo se entrena usando un proceso automático, 
-        donde va mejorando su precisión con cada ciclo, o "época".Después del entrenamiento, el modelo puede hacer predicciones, como convertir 100 grados Celsius a Fahrenheit. 
-        Al final, también se muestra cómo se ven las conexiones internas del modelo, lo que nos permite ver qué aprendió.
-        </p>   
-</body>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados de Búsqueda Laberintos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
         }
+        header {
+            background-color: #f2c041;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 800px; /* Ancho máximo para el contenido */
+            margin: 0 auto; /* Centramos el contenedor */
+        }
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+        p {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: justify;
+            padding: 10px; /* Añadido padding para los párrafos */
+            background-color: #ffffff; /* Fondo blanco para destacar el texto */
+            border-radius: 5px; /* Bordes redondeados para los párrafos */
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        section {
+            margin-bottom: 30px; /* Espaciado entre secciones */
+            padding: 20px; /* Padding para las secciones */
+            background-color: #ffffff; /* Fondo blanco para las secciones */
+            border-radius: 5px; /* Bordes redondeados para las secciones */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para las secciones */
+        }
         table {
-            width: 70%;
-            margin: 0 auto;
+            width: 100%; /* La tabla ocupa todo el ancho del contenedor */
+            margin: 20px auto;
             border-collapse: collapse;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
@@ -64,43 +68,77 @@
         tr:hover {
             background-color: #d1ffd1; /* Color al pasar el mouse */
         }
-        h2 {
-            text-align: center;
-            color: #333;
-        }
     </style>
 </head>
 <body>
 
-<h2>Resultados de Búsqueda de Laberintos</h2>
+<header>
+    <h1>Clases de Inteligencia Artificial</h1>
+</header>
 
-<table>
-    <tr>
-        <th>Método</th>
-        <th>Grupo</th>
-        <th>Estados Explorados</th>
-    </tr>
-    <tr>
-        <td>DFS</td>
-        <td>Grupo A</td>
-        <td>227</td>
-    </tr>
-    <tr>
-        <td>DFS</td>
-        <td>Grupo B</td>
-        <td>265</td>
-    </tr>
-    <tr>
-        <td>BFS</td>
-        <td>Grupo A</td>
-        <td>331</td>
-    </tr>
-    <tr>
-        <td>BFS</td>
-        <td>Grupo B</td>
-        <td>319</td>
-    </tr>
-</table>
+<div class="container">
+    <section>
+        <h2>22/08/2024</h2>
+        <p>
+            En la primera clase vimos definiciones de Inteligencia Artificial, conceptos, objetivos, lógica,
+            se explicó el método de Alan Turing, problemas de búsqueda, métodos de búsqueda y hicimos práctica con Git.
+        </p>
+    </section>
+
+    <section>
+        <h2>29/08/2024 - Video:</h2>
+        <p>
+            Explica cómo las redes neuronales imitan el cerebro humano para reconocer patrones en imágenes. 
+            Muestra la estructura básica de una red neuronal, como las capas de entrada, ocultas y de salida. 
+            Las capas de entrada procesan los píxeles, las ocultas identifican patrones, y la de salida clasifica los dígitos. 
+            La función sigmoide normaliza las activaciones entre 0 y 1, ayudando en el reconocimiento preciso. 
+            También se menciona la importancia de ajustar los pesos y sesgos para optimizar el rendimiento de la red.
+        </p>
+    </section>
+
+    <section>
+        <h2>12/09/2024 - Clase:</h2>
+        <p>
+            En la clase se realizó la práctica en Google Colab donde trabajamos un ejercicio en el que utilizamos 
+            una herramienta llamada TensorFlow para crear un modelo que convierte temperaturas de Celsius a Fahrenheit. 
+            Primero, tenemos dos listas de datos: una con valores en grados Celsius y otra con sus equivalentes en Fahrenheit. 
+            Luego, se construye un modelo sencillo con capas que aprenden a hacer esa conversión. 
+            El modelo se entrena usando un proceso automático, donde va mejorando su precisión con cada ciclo, o "época". 
+            Después del entrenamiento, el modelo puede hacer predicciones, como convertir 100 grados Celsius a Fahrenheit. 
+            Al final, también se muestra cómo se ven las conexiones internas del modelo, lo que nos permite ver qué aprendió.
+        </p>
+    </section>
+
+    <h2 style="text-align:center;">Resultados de Búsqueda de Laberintos</h2>
+
+    <table>
+        <tr>
+            <th>Método</th>
+            <th>Grupo</th>
+            <th>Estados Explorados</th>
+        </tr>
+        <tr>
+            <td>DFS</td>
+            <td>Grupo A</td>
+            <td>227</td>
+        </tr>
+        <tr>
+            <td>DFS</td>
+            <td>Grupo B</td>
+            <td>265</td>
+        </tr>
+        <tr>
+            <td>BFS</td>
+            <td>Grupo A</td>
+            <td>331</td>
+        </tr>
+        <tr>
+            <td>BFS</td>
+            <td>Grupo B</td>
+            <td>319</td>
+        </tr>
+    </table>
+</div>
 
 </body>
 </html>
