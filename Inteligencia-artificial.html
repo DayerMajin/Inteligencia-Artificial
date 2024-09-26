@@ -68,6 +68,12 @@
         tr:hover {
             background-color: #d1ffd1; /* Color al pasar el mouse */
         }
+        pre {
+            background-color: #f8f8f8; /* Fondo claro para el código */
+            padding: 15px; /* Espacio interno */
+            border-radius: 5px; /* Bordes redondeados */
+            overflow-x: auto; /* Permite el desplazamiento horizontal */
+        }
     </style>
 </head>
 <body>
@@ -138,6 +144,59 @@
             <td>319</td>
         </tr>
     </table>
+
+    <section>
+        <h2>Código de TensorFlow para Conversión de Temperatura</h2>
+        <pre>
+            <code>
+# Importamos las librerías necesarias
+import tensorflow as tf
+import numpy as np
+
+# Definimos los datos de entrada (Celsius) y los datos de salida (Fahrenheit)
+celsius = np.array([-40, -10, 0, 8, 15, 22, 38], dtype=float)
+fahrenheit = np.array([-40, 14, 32, 46, 59, 72, 100], dtype=float)
+
+# Definimos las capas de la red neuronal
+# capa = tf.keras.layers.Dense(units=1, input_shape=[1])  # Capa de salida simple (comentada)
+oculta1 = tf.keras.layers.Dense(units=3, input_shape=[1]) # Primera capa oculta con 3 neuronas
+oculta2 = tf.keras.layers.Dense(units=3)                   # Segunda capa oculta con 3 neuronas
+salida = tf.keras.layers.Dense(units=1)                    # Capa de salida con 1 neurona
+
+# Creamos el modelo secuencial con las capas definidas
+modelo = tf.keras.Sequential([oculta1, oculta2, salida])
+
+# Compilamos el modelo especificando el optimizador y la función de pérdida
+modelo.compile(
+    optimizer=tf.keras.optimizers.Adam(0.1),   # Optimizador Adam con tasa de aprendizaje de 0.1
+    loss='mean_squared_error'                    # Función de pérdida: error cuadrático medio
+)
+
+# Comenzamos el entrenamiento
+print("Comenzando entrenamiento...")
+historial = modelo.fit(celsius, fahrenheit, epochs=1000, verbose=False) # Entrenamos el modelo durante 1000 épocas
+print("Modelo entrenado!")
+
+# Importamos Matplotlib para graficar la pérdida durante el entrenamiento
+import matplotlib.pyplot as plt
+plt.xlabel("# Época")                              # Etiqueta para el eje X
+plt.ylabel("Magnitud de pérdida")                  # Etiqueta para el eje Y
+plt.plot(historial.history["loss"])                # Graficamos la pérdida
+
+# Hacemos una predicción
+print("Hagamos una predicción!")
+resultado = modelo.predict([100.0])                # Realizamos una predicción para 100 grados Celsius
+print("El resultado es " + str(resultado) + " fahrenheit!")
+
+# Mostramos las variables internas del modelo
+print("Variables internas del modelo")
+#print(capa.get_weights())                          # Mostramos los pesos de la capa (comentado)
+print(oculta1.get_weights())                        # Pesos de la primera capa oculta
+print(oculta2.get_weights())                        # Pesos de la segunda capa oculta
+print(salida.get_weights())                         # Pesos de la capa de salida
+            </code>
+        </pre>
+    </section>
 </div>
 
 </body>
